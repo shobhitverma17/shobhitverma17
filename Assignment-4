@@ -2,25 +2,34 @@
 using namespace std;
 
 class Shape
+
 {
     public:
+    
     int a,b,c;
+    
     virtual void find_area()=0;
+    
     virtual void getdata()=0;
 };
 
 class Square : public Shape
 {
     public:
+    
     float area;
+    
     void getdata()
+    
     {
         cout<<"Enter the side length : "<<endl;
+        
         cin>>a;
     }
     void find_area()
     {
         area= a*a;
+        
         cout<<"The area of the circle is: "<<area<<endl;
     }
 };
@@ -28,15 +37,22 @@ class Square : public Shape
 class Rectangle: public Shape
 {
     public:
+    
     int area;
+    
     void getdata()
+    
     {
         cout<<"Enter the length and breadth: "<<endl;
+        
         cin>>a>>b;
     }
+    
+    
     void find_area()
     {
         area=a*b;
+        
         cout<<"The area of the rectangle is: "<<area<<endl;
     }
 };
@@ -44,15 +60,20 @@ class Rectangle: public Shape
 class Triangle: public Shape
 {
     public:
+    
     float area;
+    
     void getdata()
     {
         cout<<"Enter the base and height of the triangle: "<<endl;
+        
         cin>>a>>b;
+       
     }
     void find_area()
     {
         area=0.5*a*b;
+        
         cout<<"The area of the triangle is : "<<area<<endl;
     }
 
@@ -61,17 +82,31 @@ class Triangle: public Shape
 int main()
 {
     Shape *a, *b, *c;
+    
     Square C;
+    
     Rectangle R;
+    
     Triangle T;
+    
     a=&C;
+    
     b=&R;
+    
     c=&T;
+    
     a->getdata();
+    
     a->find_area();
+    
     b->getdata();
+    
     b->find_area();
+    
     c->getdata();
+    
     c->find_area();
+    
     return 0;
+    
 }
