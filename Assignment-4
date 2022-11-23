@@ -21,29 +21,29 @@ public:
     }
 
     void show();
-    // basic operators
+    
     rational operator+(rational);
-    rational operator-(rational);
+    rational operator-(rational);          // basic operators
     rational operator*(rational);
     rational operator/(rational);
     // basic operators implemented through friend functions
     friend rational operator+(rational, int);
     friend rational operator+(int, rational);
 
-    // output operators
-    friend void operator<<(ostream &, const rational);
+   
+    friend void operator<<(ostream &, const rational);                     // output operators
 
-    // assignment operators
+    
     rational operator=(const rational &ob);
     rational operator+=(const rational &ob);
-    rational operator*=(const rational &ob);
+    rational operator*=(const rational &ob);              // assignment operators
     rational operator/=(const rational &ob);
     rational operator-=(const rational &ob);
 
-    // comparison operators
+    
     int operator==(rational);
     int operator!=(rational);
-    int operator<=(rational);
+    int operator<=(rational);               // comparison operators
     int operator>=(rational);
     int operator<(rational);
     int operator>(rational);
@@ -54,8 +54,8 @@ void operator<<(ostream &p, const rational t)
     p << t.num << "\n__\n"
       << t.denom << endl;
 }
-// assignment operators
-rational rational::operator=(const rational &ob)
+
+rational rational::operator=(const rational &ob)               // assignment operators
 {
     this->num = ob.num;
     this->denom = ob.denom;
@@ -258,19 +258,19 @@ void rational::show()
 int main()
 {
     int p, q, r, s;
-    cout << "Enter p and q for a rational number (p/q):";
+    cout << "Enter p and q :";
     cin >> p >> q;
     rational a(p, q);
-    cout << "Enter p and q for a rational number (p/q):";
+    cout << "Enter p and q :";
     cin >> r >> s;
     rational b(r, s);
 
-    cout << "Verifying friend function operator overloading:" << endl;
+    cout << "friend function through operator overloading:" << endl;
     rational fsum = 4 + a;
     cout << fsum;
     rational fsum2 = a + 5;
     cout << fsum2;
-    cout << "Verifying addition and assignment operator on the first object:\n";
+    cout << " addition and assignment operator on the first object:\n";
     a += b;
     cout << a;
     cout << "Verifying the comparison operator:" << endl;
@@ -284,11 +284,11 @@ int main()
     }
     if (a > b)
     {
-        cout << "The first rational number is greater than the second rational number." << endl;
+        cout << " first rational n0. is greater than the second rational number." << endl;
     }
     if (a < b)
     {
-        cout << "The first rational number is smaller than the second rational number." << endl;
+        cout << " first rational no is smaller than the second rational number." << endl;
     }
     
 
